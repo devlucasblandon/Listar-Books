@@ -4,25 +4,29 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { BookListComponent } from './book-list.component';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('BookListComponent', () => {
-  let component: BookListComponent;
-  let fixture: ComponentFixture<BookListComponent>;
+ let component: BookListComponent;
+ let fixture: ComponentFixture<BookListComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ BookListComponent ]
-    })
-    .compileComponents();
-  }));
+ beforeEach(async(() => {
+   TestBed.configureTestingModule({
+     imports: [HttpClientModule],
+     declarations: [ BookListComponent ]
+   })
+   .compileComponents();
+ }));
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(BookListComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+ beforeEach(() => {
+   fixture = TestBed.createComponent(BookListComponent);
+   component = fixture.componentInstance;
+   fixture.detectChanges();
+ });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+ it('should create', () => {
+   expect(component).toBeTruthy();
+ });
 });
+/* Archivo src/app/book/book-list.component.spec.ts */
+
