@@ -16,6 +16,15 @@
           "standalone": false
         }
       },
+      "i18n": {
+        "sourceLocale": "en-US",
+        "locales": {
+          "es": {
+            "translation": "src/locale/messages.es.xlf",
+            "baseHref": ""
+          }
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -35,6 +44,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/ngx-toastr/toastr.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
@@ -46,6 +56,11 @@
             }
           },
           "configurations": {
+            "es": {
+              "localize": ["es"],
+              "outputPath": "dist/book-list-es/",
+              "i18nMissingTranslation": "error"
+           },
             "production": {
               "budgets": [
                 {
@@ -78,6 +93,9 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
+            "es": {
+              "buildTarget": "book-list:build:es"
+            },
             "production": {
               "buildTarget": "book-list:build:production"
             },
